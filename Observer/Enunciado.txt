@@ -1,0 +1,8 @@
+Tienes un canal de YouTube. Cada vez que subes un nuevo vídeo, quieres que todos tus suscriptores reciban una notificación automáticamente, enviándoles el título del vídeo directamente (esto se conoce como estrategia PUSH).
+Tu tarea:
+Aplica el patrón Observer clásico para modelar este sistema de notificaciones.
+	1.	Crea una interfaz Sujeto (el Observable) que defina dos métodos: suscribir(Observador o) y notificar(String tituloVideo).
+	2.	Crea una interfaz Observador que defina un único método: actualizar(String tituloVideo).
+	3.	Crea la clase concreta CanalYoutube (tu Sujeto concreto). Esta clase debe tener una lista interna para guardar a sus observadores (List<Observador>). Implementa los métodos de la interfaz y añade un método propio llamado subirVideo(String titulo) que imprima por consola que se está subiendo el vídeo y, acto seguido, llame a notificar(titulo) para avisar a todos.
+	4.	Crea la clase concreta Suscriptor (tu Observador concreto). Debe tener un atributo nombre (que se asigna en su constructor). Cuando el canal llame a su método actualizar(String tituloVideo), el suscriptor debe imprimir por consola algo como: "¡Hola [nombre]! Hay un nuevo vídeo: [tituloVideo]".
+	5.	Crea una clase con un main donde instancies el canal de YouTube, crees 2 o 3 suscriptores, los suscribas al canal utilizando el método correspondiente, y finalmente hagas que el canal suba un vídeo.

@@ -1,0 +1,9 @@
+Aplica el patrón Factory Method clásico para crear estas notificaciones.
+	1.	Crea una interfaz (o clase abstracta) Notificacion (el Product) con un método enviarMensaje().
+	2.	Crea las clases concretas NotificacionEmail y NotificacionSMS (los ConcreteProducts) que implementen ese método imprimiendo "Enviando Email..." o "Enviando SMS...".
+	3.	Crea la clase abstracta CreadorNotificacion (el Creator). Esta clase debe tener:
+•	El Factory Method abstracto: protected abstract Notificacion crearNotificacion();
+•	Un método normal ejecutarEnvio() que llame al factory method para obtener la notificación y luego ejecute enviarMensaje().
+	4.	Crea las fábricas concretas CreadorEmail y CreadorSMS (los ConcreteCreators). Su única misión es sobrescribir el factory method para hacer el return new NotificacionEmail(); o el SMS correspondientemente.
+	5.	Crea un main donde instancies un creador específico (por ejemplo, CreadorNotificacion creador = new CreadorEmail();) y llames a creador.ejecutarEnvio().
+Nota: Fíjate bien en que el main solo interactúa con los creadores, delegando así la lógica de instanciación ("la fabricación" del objeto) a las subclases.

@@ -1,0 +1,11 @@
+Estás creando una librería para dibujar interfaces gráficas (GUI). Tu librería tiene que soportar dos sistemas operativos: Windows y Mac.
+En la pantalla necesitas dibujar dos elementos (productos): Botones y Casillas de verificación (Checkboxes).
+Obviamente, un botón de Windows no se dibuja igual que uno de Mac, y es crítico que si la app está en Windows, todos los elementos sean estilo Windows (no puedes mezclar un botón de Windows con un checkbox de Mac).
+Tu tarea:
+Aplica el patrón Abstract Factory para garantizar que se crea la familia de productos correcta.
+	1.	Productos Abstractos: Crea dos interfaces: Boton (con el método pintar()) y Checkbox (con el método dibujar()).
+	2.	Productos Concretos: Crea las clases que implementan esas interfaces para cada familia: BotonWindows, BotonMac, CheckboxWindows, y CheckboxMac. (Que sus métodos simplemente impriman "Pintando Botón Windows", etc.).
+	3.	La Fábrica Abstracta: Crea una interfaz GUIFactory que tenga dos métodos: crearBoton() y crearCheckbox().
+	4.	Las Fábricas Concretas: Crea WindowsFactory y MacFactory. Cada una implementará la GUIFactory devolviendo los objetos concretos que le corresponden a su familia.
+	5.	El Cliente (main): Crea un programa donde declares una variable GUIFactory fabrica;. Asígnale, por ejemplo, un new MacFactory(). Luego usa esa fábrica para crear un botón y un checkbox, y pídele a ambos que se dibujen.
+Pista: Fíjate que el cliente (tu main) va a trabajar todo el rato con las interfaces GUIFactory, Boton y Checkbox. En ningún momento el cliente hace un new BotonWindows().

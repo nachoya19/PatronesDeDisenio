@@ -1,0 +1,10 @@
+Tienes un sistema de e-commerce. Todo tu código está preparado para trabajar con una interfaz estándar llamada ProcesadorPago, que procesa los cobros en euros con decimales (ej: 15.50).
+Sin embargo, te han obligado a integrar una pasarela de pago antigua del banco (SistemaAntiguoBanco). Esta clase tiene un problema: ¡solo acepta cobros en números enteros que representan céntimos! (ej: 1550 céntimos). Como es una librería cerrada del banco, no puedes modificar su código.
+Tu tarea:
+Aplica el patrón Adapter (por composición) para hacer que ambas piezas encajen.
+	1.	El Target (Lo que espera el cliente): Crea una interfaz ProcesadorPago con el método pagar(double euros).
+	2.	El Adaptee (Lo que tenemos pero es incompatible): Crea la clase SistemaAntiguoBanco con un método realizarCobro(int centimos). Este método simplemente debe imprimir: "Cobrando " + centimos + " céntimos a través del sistema antiguo".
+	3.	El Adapter (El traductor): Crea la clase AdaptadorBanco que implemente ProcesadorPago.
+•	Por composición, esta clase debe tener como atributo una instancia de SistemaAntiguoBanco.
+•	Al sobrescribir el método pagar(double euros), el adaptador debe hacer la conversión (multiplicar los euros por 100 y pasarlos a int) y delegar la llamada al método realizarCobro() del sistema antiguo.
+	4.	El Cliente (main): En tu programa principal, declara una variable de tipo ProcesadorPago, instánciala como un AdaptadorBanco, e intenta hacer un pago de 25.50 euros. ¡El cliente no debe saber nada de los céntimos!

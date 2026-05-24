@@ -1,0 +1,8 @@
+Estás desarrollando una aplicación y necesitas un sistema de registro (Logger) centralizado para guardar los mensajes de error y advertencia (ej: "Error de conexión", "Usuario logueado"). Si distintas partes de tu aplicación instancian su propio Logger con new Logger(), podrías acabar con múltiples objetos intentando escribir a la vez, gastando memoria innecesaria o sobrescribiéndose. Necesitamos que exista una y solo una instancia del Logger en toda la aplicación.
+Tu tarea:
+Aplica el patrón Singleton clásico (con instanciación perezosa / lazy initialization).
+	1.	Crea la clase Logger.
+	2.	Asegúrate de que nadie desde fuera pueda usar new para crear instancias de esta clase. (Pista: tiene que ver con el constructor).
+	3.	Crea un método de acceso global estático (típicamente llamado getInstance()) que se encargue de crear la instancia solo si no existe previamente, y devolverla.
+	4.	Añade un método normal (no estático) llamado escribirLog(String mensaje) que simplemente imprima el mensaje por consola.
+	5.	Crea un main donde intentes obtener la instancia del Logger dos veces en variables diferentes (ej: logger1 y logger2). Llama a escribirLog con ambas y, para demostrar que es Singleton, imprime el resultado de comparar ambas variables (logger1 == logger2). ¡Debería dar true!

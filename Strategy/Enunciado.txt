@@ -1,0 +1,20 @@
+Ejercicio 1: Sistema de Envíos (Patrón Strategy)
+El problema:
+Estás desarrollando el carrito de la compra para una tienda online. El coste de envío de un pedido varía dependiendo de la compañía o método de transporte que elija el usuario. Actualmente existen tres métodos:
+
+Envío Estándar (Correos): Añade un coste fijo de 5€ al pedido.
+
+Envío Exprés (Seur): Añade un coste fijo de 10€ al pedido.
+
+Envío Gratis (Recogida en tienda): No añade ningún coste (0€).
+
+Tu tarea:
+Aplica el patrón Strategy para calcular el precio total del pedido.
+
+Crea una interfaz EstrategiaEnvio (Strategy) con un método para calcular el coste.
+
+Crea las clases concretas para cada método de envío (Concrete Strategies).
+
+Crea la clase Pedido (Contexto) que tenga un importe base (por ejemplo, 50€ en productos) y reciba la estrategia de envío elegida para calcular el importe total final.
+
+Objetivo del patrón aquí: Debes poder añadir un nuevo método de envío en el futuro (por ejemplo, Envío Internacional) sin tener que tocar ni modificar el código de la clase Pedido.

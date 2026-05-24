@@ -1,0 +1,13 @@
+El problema:
+Estás diseñando el sistema de cobro de una pizzería. Tienen una pizza base estándar, pero los clientes pueden añadir tantos ingredientes extra como quieran de forma dinámica (en tiempo de ejecución). Cada ingrediente extra modifica tanto la descripción de la pizza como su precio final.
+Tu tarea:
+Aplica el patrón Decorator para envolver la pizza base con distintos ingredientes.
+	1.	El Componente Base: Crea una interfaz Pizza con dos métodos: String getDescripcion() y double getPrecio().
+	2.	El Componente Concreto: Crea la clase PizzaBase que implemente Pizza. Su descripción será "Pizza base (tomate y queso)" y su precio 8.0.
+	3.	El Decorador Base (Wrapper): Crea una clase abstracta PizzaDecorator que implemente Pizza.
+•	¡Clave del patrón! Esta clase debe tener un atributo de tipo Pizza (para guardar la pizza que está envolviendo) y recibirlo por el constructor.
+•	Sus métodos getDescripcion() y getPrecio() simplemente deben hacer un return llamando a los métodos del objeto Pizza que tienen guardado.
+	4.	Los Decoradores Concretos: Crea dos clases que hereden de PizzaDecorator:
+•	IngredienteBacon: Añade " + Bacon" a la descripción y 1.5 al precio.
+•	IngredienteChampinones: Añade " + Champiñones" a la descripción y 1.0 al precio.
+	5.	El Cliente (main): En tu programa principal, crea una PizzaBase. Luego, envuélvela con IngredienteBacon y, a ese resultado, envuélvelo de nuevo con IngredienteChampinones. Imprime la descripción y el precio final (debería salir "Pizza base (tomate y queso) + Bacon + Champiñones" costando 10.5).

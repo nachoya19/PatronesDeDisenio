@@ -1,0 +1,13 @@
+Imagínate que te has montado un sistema de "Cine en Casa" espectacular. Pero cada vez que quieres ver una película, tienes que hacer un montón de cosas manualmente: encender la tele, poner la entrada HDMI correcta, encender el equipo de sonido, subir el volumen al nivel 20, y por último, atenuar las luces del salón.
+¡Es un rollo! Quieres un único botón mágico que diga "Ver Película" y que lo haga todo por ti.
+Tu tarea:
+Aplica el patrón Facade para simplificar el uso de este complejo subsistema de aparatos.
+	1.	El Subsistema Complejo: Crea tres clases normales y corrientes:
+•	Televisor: Con métodos encender() y ponerEntradaHDMI().
+•	EquipoSonido: Con métodos encender() y ponerVolumen(int nivel).
+•	Luces: Con un método atenuar().
+(Haz que estos métodos simplemente impriman por consola lo que están haciendo, ej: "Luces atenuadas para la película").
+	2.	La Fachada: Crea la clase CineEnCasaFacade.
+•	Esta clase debe tener como atributos las instancias de las tres clases del subsistema (Televisor, EquipoSonido, Luces). Puedes instanciarlas directamente o pasarlas por el constructor.
+•	Crea un método verPelicula(). Dentro de este método, llama en orden a todos los métodos necesarios de los aparatos para preparar el salón.
+	3.	El Cliente (main): En tu programa principal, olvídate de la tele, el sonido y las luces. Simplemente instancia tu CineEnCasaFacade y llama a su método verPelicula().

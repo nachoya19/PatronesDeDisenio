@@ -1,0 +1,10 @@
+Tienes un reproductor de música muy simple con un único botón principal: pulsarBoton(). El comportamiento de este botón cambia radicalmente dependiendo del estado en el que se encuentre el reproductor.
+•	Si el reproductor está Detenido, al pulsar el botón pasa a estar Reproduciendo (e imprime: "Empezando a reproducir la canción").
+•	Si el reproductor está Reproduciendo, al pulsar el botón pasa a estar Pausado (e imprime: "Pausando la canción").
+•	Si el reproductor está Pausado, al pulsar el botón pasa a estar Reproduciendo de nuevo (e imprime: "Reanudando la canción").
+Tu tarea:
+Aplica el patrón State para modelar esta máquina de estados.
+	1.	Crea una interfaz EstadoReproductor (State) con el método pulsarBoton(Reproductor contexto).
+	2.	Crea las clases de los estados concretos: EstadoDetenido, EstadoReproduciendo y EstadoPausado (ConcreteStates). Recuerda que en este patrón, son los propios estados concretos los que suelen realizar la transición al siguiente estado.
+	3.	Crea la clase Reproductor (Contexto) que tenga un atributo con su estado actual (que por defecto sea EstadoDetenido) y un método pulsarBoton() que simplemente delegue la acción en su estado actual.
+	4.	Crea un main donde instancies el reproductor y pulses el botón 3 o 4 veces seguidas para ver cómo transita de un estado a otro mágicamente.

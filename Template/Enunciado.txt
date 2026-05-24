@@ -1,0 +1,13 @@
+Estás simulando un juego de construcción de casas. Construir una casa siempre sigue los mismos pasos generales en el mismo orden:
+	1.	Construir cimientos.
+	2.	Construir paredes.
+	3.	Instalar ventanas.
+Las casas de madera y las casas de cristal comparten la forma en que se construyen los cimientos (siempre son de cemento). Sin embargo, difieren en cómo se construyen las paredes y las ventanas.
+Tu tarea:
+Aplica el patrón Template Method para modelar la construcción.
+	1.	Crea una clase abstracta CasaTemplate que contenga:
+•	El método plantilla (que define el orden de ejecución de los pasos). Recuerda cómo debe declararse este método para que las subclases no puedan alterar el orden.
+•	La implementación por defecto de construir cimientos.
+•	Los métodos abstractos para construir paredes e instalar ventanas.
+	2.	Crea dos clases concretas: CasaMadera y CasaCristal, que implementen los pasos que faltan, imprimiendo por consola un mensaje como "Construyendo paredes de madera" o "Instalando ventanas de cristal".
+	3.	Crea un programa cliente (un main) donde instancies ambos tipos de casas y llames al método plantilla para construirlas.
